@@ -1,0 +1,19 @@
+ALGORITHM Insertion_Algo
+VAR
+    Sort_Insert : ARRAY_OF INTEGER[n];
+    i, temp : INTEGER;
+BEGIN
+    Write("Type the legnt of the arrow");
+    Read(n);
+    FOR i FROM 1 TO Sort_Insert.length-1 DO
+    // Compare second element to first element
+    // If the first element is greater than second, we place it in temporary variable temp
+    // Then we switch the elements
+            WHILE (i > 0 AND Sort_Insert[i-1] > Sort_Insert[i]) DO
+            temp := Sort_Insert[i]
+            Sort_Insert[i] := Sort_Insert[i-1]
+            Sort_Insert[i-1] := temp
+            i := i-1
+        END_WHILE
+    END_FOR
+END
